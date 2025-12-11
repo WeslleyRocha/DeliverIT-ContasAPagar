@@ -61,10 +61,10 @@ public class ContaService {
         BigDecimal taxaMulta = null;
         BigDecimal taxaJurosDiario = null;
 
-        if (dias >= 5) {
+        if (dias > 5) {
             taxaMulta = MULTA_SUPERIOR_5_DIAS;
             taxaJurosDiario = JUROS_SUPERIOR_5_DIAS;
-            conta.setRegraCalculo("Juros e Multa aplicado,Superior a 5 dias de atraso! ");
+            conta.setRegraCalculo("Juros e Multa aplicado,Superior a 5 dias de atraso!");
 
         } else if (dias > 3) {
             taxaMulta = MULTA_SUPERIOR_3_DIAS;
