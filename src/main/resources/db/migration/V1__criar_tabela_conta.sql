@@ -6,5 +6,6 @@ CREATE TABLE conta (
     data_vencimento DATE NOT NULL,
     data_pagamento DATE,
     valor_corrigido DECIMAL(19, 2),
-    dias_atraso INTEGER
+    dias_atraso INTEGER,
+    regra_calculo VARCHAR(255)
 );
