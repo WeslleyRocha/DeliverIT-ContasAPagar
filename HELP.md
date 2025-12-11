@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'DeliverIT-ContasAPagar' is invalid and this project uses 'DeliverIT_ContasAPagar' instead.
+* The original package name 'DeliverIT-ContasAPagar' is invalid and this project uses 'DeliverITContasAPagar' instead.
 
 # Getting Started
 
