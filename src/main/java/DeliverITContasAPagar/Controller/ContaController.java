@@ -2,6 +2,7 @@ package DeliverITContasAPagar.Controller;
 
 import DeliverITContasAPagar.Model.Conta;
 import DeliverITContasAPagar.Service.ContaService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ public class ContaController {
     }
 
     @PostMapping
-    public ResponseEntity<Conta> salvarConta(@RequestBody Conta conta){
+    public ResponseEntity<Conta> salvarConta(@Valid @RequestBody Conta conta){
 
         try {
             Conta contaSalva = contaService.salvar(conta);

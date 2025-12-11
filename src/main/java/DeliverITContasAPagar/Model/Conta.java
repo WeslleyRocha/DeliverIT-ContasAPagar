@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -22,15 +24,19 @@ public class Conta implements Serializable {
     @Column(name = "id_conta")
     private Long idConta;
 
+    @NotBlank(message = "O nome é obrigatório!")
     @Column(name = "nome", nullable = false)
     private String nome;
 
+    @NotNull(message = "O valor original é obrigatório!")
     @Column(name = "valor_original",  nullable = false)
     private BigDecimal valorOriginal;
 
+    @NotNull(message = "A data de vencimento é obrigatória!")
     @Column(name = "data_vencimento",  nullable = false)
     private LocalDate dataVencimento;
 
+    @NotNull(message = "A data de pagamento é obrigatória!")
     @Column(name = "data_pagamento", nullable = false)
     private LocalDate dataPagamento;
 
