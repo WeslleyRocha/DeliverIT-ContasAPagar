@@ -21,8 +21,8 @@ public class Conta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_conta")
-    private Long idConta;
+    @Column(name = "id")
+    private Long id;
 
     @NotBlank(message = "O nome é obrigatório!")
     @Column(name = "nome", nullable = false)
@@ -50,12 +50,12 @@ public class Conta implements Serializable {
     private String regraCalculo;
     
 
-    public Long getIdConta() {
-        return idConta;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdConta(Long idConta) {
-        this.idConta = idConta;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
