@@ -1,43 +1,49 @@
-<div class="card shadow-sm">
-  <div class="card-header bg-primary text-white">
-    <h4 class="mb-0">Nova Conta a Pagar</h4>
+<div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+  <div class="card-header bg-primary text-white text-center py-3 border-0">
+    <h5 class="mb-0 fw-light">Adicionar Conta</h5>
   </div>
 
-  <div class="card-body">
+  <div class="card-body p-4 bg-white">
     <form (ngSubmit)="cadastrar()">
 
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Nome da Conta</label>
-          <input type="text" class="form-control" [(ngModel)]="conta.nome" name="nome" placeholder="Ex: Energia Elétrica" required>
+      <div class="row g-3">
+        <div class="col-12">
+          <label class="form-label text-secondary small text-uppercase fw-bold">Descrição</label>
+          <input type="text" class="form-control form-control-lg bg-light border-0"
+                 [(ngModel)]="conta.nome" name="nome" placeholder="Ex: Aluguel" required>
         </div>
 
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Valor Original (R$)</label>
-          <div class="input-group">
-            <span class="input-group-text">R$</span>
-            <input type="number" class="form-control" [(ngModel)]="conta.valorOriginal" name="valorOriginal" required>
+        <div class="col-md-4">
+          <label class="form-label text-secondary small text-uppercase fw-bold">Valor</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text border-0 bg-light text-muted">R$</span>
+
+            <input type="text"
+                   class="form-control bg-light border-0"
+                   [(ngModel)]="valorInput"
+                   (input)="formatarMoeda($event)"
+                   name="valorOriginal"
+                   placeholder="0,00"
+                   required>
+
           </div>
         </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-secondary small text-uppercase fw-bold">Vencimento</label>
+          <input type="date" class="form-control form-control-lg bg-light border-0 text-muted"
+                 [(ngModel)]="conta.dataVencimento" name="dataVencimento" required>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label text-secondary small text-uppercase fw-bold">Pagamento</label>
+          <input type="date" class="form-control form-control-lg bg-light border-0 text-muted"
+                 [(ngModel)]="conta.dataPagamento" name="dataPagamento" required>
+        </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Data de Vencimento</label>
-          <input type="date" class="form-control" [(ngModel)]="conta.dataVencimento" name="dataVencimento" required>
-        </div>
-
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Data do Pagamento</label>
-          <input type="date" class="form-control" [(ngModel)]="conta.dataPagamento" name="dataPagamento" required>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-success btn-lg">
-          💾 Salvar Conta
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm fw-bold">
+          Salvar
         </button>
       </div>
 

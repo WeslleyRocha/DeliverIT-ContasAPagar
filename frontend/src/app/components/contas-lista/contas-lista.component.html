@@ -1,44 +1,46 @@
-<div class="card shadow-sm mt-4">
-  <div class="card-header bg-secondary text-white">
-    <h4 class="mb-0">📋 Lista de Contas</h4>
-  </div>
+<div class="card border-0 shadow rounded-4">
+  <div class="card-body p-0">
 
-  <div class="card-body">
-
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <thead class="table-dark">
+    <div class="table-responsive tabela-scroll">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="bg-light">
         <tr>
-          <th>Nome</th>
-          <th>Vencimento</th>
-          <th>Pagamento</th>
-          <th>Valor Original</th>
-          <th>Valor Corrigido</th>
-          <th>Dias Atraso</th>
+          <th class="ps-4 py-3 text-secondary small text-uppercase font-monospace border-0">Conta</th>
+          <th class="py-3 text-secondary small text-uppercase font-monospace border-0">Vencimento</th>
+          <th class="py-3 text-secondary small text-uppercase font-monospace border-0">Pagamento</th>
+          <th class="py-3 text-secondary small text-uppercase font-monospace border-0 text-end pe-4">Valor Final</th>
+          <th class="py-3 text-secondary small text-uppercase font-monospace border-0 text-center">Status</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let c of contas">
-          <td>{{ c.nome }}</td>
-          <td>{{ c.dataVencimento | date:'dd/MM/yyyy' }}</td>
-          <td>{{ c.dataPagamento | date:'dd/MM/yyyy' }}</td>
-          <td>{{ c.valorOriginal | currency:'BRL' }}</td>
-          <td class="fw-bold text-danger">{{ c.valorCorrigido | currency:'BRL' }}</td>
-          <td>
-              <span class="badge" [ngClass]="c.diasAtraso! > 0 ? 'text-bg-warning' : 'text-bg-success'">
-                {{ c.diasAtraso }} dias
+        <tr *ngFor="let c of contas" style="cursor: default;">
+          <td class="ps-4 py-3 fw-bold text-dark">{{ c.nome }}</td>
+          <td class="text-muted small">{{ c.dataVencimento | date:'dd/MM/yy' }}</td>
+          <td class="text-muted small">{{ c.dataPagamento | date:'dd/MM/yy' }}</td>
+
+          <td class="text-end pe-4 fw-bold"
+              [ngClass]="c.valorCorrigido! > c.valorOriginal ? 'text-danger' : 'text-success'">
+            {{ c.valorCorrigido | currency:'BRL' }}
+            <div class="small text-muted fw-normal text-decoration-line-through" *ngIf="c.valorCorrigido! > c.valorOriginal">
+              {{ c.valorOriginal | currency:'BRL' }}
+            </div>
+          </td>
+
+          <td class="text-center">
+              <span class="badge rounded-pill px-3 fw-normal"
+                    [ngClass]="c.diasAtraso! > 0 ? 'bg-warning text-dark' : 'bg-success'">
+                {{ c.diasAtraso! > 0 ? c.diasAtraso + ' dias atraso' : 'Em dia' }}
               </span>
           </td>
         </tr>
 
         <tr *ngIf="contas.length === 0">
-          <td colspan="6" class="text-center text-muted py-3">
-            Nenhuma conta cadastrada ainda.
+          <td colspan="5" class="text-center py-5 text-muted small">
+            Nenhuma conta registrada.
           </td>
         </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </div>

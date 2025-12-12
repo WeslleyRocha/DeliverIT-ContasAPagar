@@ -23,7 +23,8 @@ export class ContasListaComponent implements OnInit {
   carregarContas() {
     this.contaService.listar().subscribe({
       next: (dados) => {
-        this.contas = dados;
+        this.contas = dados.sort((a, b) => b.id! - a.id!);
+
         console.log('Contas carregadas:', dados);
       },
       error: (erro) => {

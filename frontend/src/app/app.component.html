@@ -1,12 +1,64 @@
-<div style="padding: 20px; font-family: sans-serif;">
-  <h1 style="color: #1976d2;">Sistema de Contas - Teste Deliver IT</h1>
-  <hr>
+<div class="d-flex flex-column min-vh-100 bg-light">
 
-  <app-contas-cadastro></app-contas-cadastro>
+  <div class="container py-5 flex-grow-1">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
 
-  <br> <br>
+        <div class="text-center mb-5">
+          <h1 class="fw-bold text-dark display-6">
+            Sistema de Contas
+          </h1>
+          <p class="text-muted">Seu Gestor financeiro simples e eficiente!</p>
+        </div>
 
-  <app-contas-lista></app-contas-lista>
+        <app-contas-cadastro></app-contas-cadastro>
 
-  <router-outlet></router-outlet>
+        <div class="my-5 position-relative">
+          <hr class="text-muted opacity-25">
+          <span class="position-absolute top-50 start-50 translate-middle bg-light px-3 text-muted small">
+            Histórico
+          </span>
+        </div>
+
+        <app-contas-lista></app-contas-lista>
+
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer class="mt-auto py-2 text-center bg-white border-top shadow-sm">
+    <div class="container">
+
+      <div class="mb-1 d-flex justify-content-center gap-3">
+
+        <a href="https://github.com/WeslleyRocha" target="_blank" class="text-secondary text-decoration-none transition-hover">
+          <i class="bi bi-github fs-5"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/weslleyrocha" target="_blank" class="text-secondary text-decoration-none transition-hover">
+          <i class="bi bi-linkedin fs-5"></i>
+        </a>
+
+        <a href="https://wa.me/5511999221235" target="_blank" class="text-secondary text-decoration-none transition-hover">
+          <i class="bi bi-whatsapp fs-5"></i>
+        </a>
+
+      </div>
+
+      <p class="mb-0 text-muted small opacity-75" style="font-size: 0.75rem;">
+        &copy; 2025 <strong>Weslley Rocha</strong>. Todos os direitos reservados.
+      </p>
+
+    </div>
+  </footer>
+
 </div>
+
+<style>
+  .transition-hover:hover {
+    color: #0d6efd !important; /* Cor Azul Primary ao passar o mouse */
+    transform: scale(1.2);      /* Aumenta levemente */
+    transition: all 0.3s ease;
+  }
+</style>
