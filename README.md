@@ -20,6 +20,16 @@ Acredito que um bom código começa com um bom plano. Abaixo você encontra os d
 
 ---
 
+## 📱 Demonstração da Aplicação
+
+Confira abaixo o sistema funcionando na prática, com o fluxo de cadastro e listagem de contas:
+
+https://github.com/user-attachments/assets/e7cd3957-4a0b-4315-8cf7-d2ca11b98723
+
+*(O vídeo mostra o cadastro de uma conta, o cálculo automático de juros e a persistência no banco de dados)*
+
+---
+
 ## 🧪 Payload para Teste Rápido (POST)
 
 - Para testar API via Postman sem abrir o Frontend!
