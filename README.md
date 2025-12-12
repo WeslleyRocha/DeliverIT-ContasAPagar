@@ -13,10 +13,10 @@ Criei uma solução **Fullstack** completa para gestão de contas a pagar. O foc
 Acredito que um bom código começa com um bom plano. Abaixo você encontra os documentos que guiaram esse desenvolvimento:
 
 📄 **[PDF com a Solicitação do Desafio](https://drive.google.com/file/d/1syCYidmSv1270EkXbT0gyDtz92YQpJw8/view?usp=share_link)**
-*(O documento original com os requisitos técnicos)*
+<small>*(O documento original com os requisitos técnicos)*</small>
 
 📝 **[Planejamento de Desenvolvimento (7 Passos)](https://docs.google.com/document/d/15KRoDcZcL1oSAe0m2D8DZ95rnjlBH0Ysm4RUd4vOLlA/edit?usp=share_link)**
-*(O roteiro que criei antes de codar para organizar a arquitetura)*
+<small>*(O roteiro que criei antes de codar para organizar a arquitetura)*</small>
 
 ---
 
