@@ -1,0 +1,46 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h4 class="mb-0">Nova Conta a Pagar</h4>
+  </div>
+
+  <div class="card-body">
+    <form (ngSubmit)="cadastrar()">
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Nome da Conta</label>
+          <input type="text" class="form-control" [(ngModel)]="conta.nome" name="nome" placeholder="Ex: Energia Elétrica" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Valor Original (R$)</label>
+          <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input type="number" class="form-control" [(ngModel)]="conta.valorOriginal" name="valorOriginal" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Data de Vencimento</label>
+          <input type="date" class="form-control" [(ngModel)]="conta.dataVencimento" name="dataVencimento" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Data do Pagamento</label>
+          <input type="date" class="form-control" [(ngModel)]="conta.dataPagamento" name="dataPagamento" required>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-success btn-lg">
+          💾 Salvar Conta
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
